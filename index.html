@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eKishan - Direct from Nepali Farmers to Your Table</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-stone-50 text-stone-800 font-sans">
+
+    <!-- Top Notification Bar -->
+    <div class="bg-emerald-800 text-emerald-100 text-xs sm:text-sm py-2 px-4 text-center font-medium">
+        <i class="fa-solid fa-leaf mr-2"></i> 100% Organic & Freshly Harvested from Local Nepali Farmers | Fair Pricing. No Middlemen Monopoly!
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-50 bg-white shadow-sm border-b border-stone-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="bg-emerald-600 text-white p-2.5 rounded-xl text-xl shadow-md">
+                    <i class="fa-solid fa-seedling"></i>
+                </div>
+                <div>
+                    <span class="text-2xl font-black tracking-tight text-emerald-900">e<span class="text-amber-600">Kishan</span></span>
+                    <span class="block text-[10px] uppercase tracking-widest text-stone-500 font-semibold">Nepal's Direct Agri-Connect</span>
+                </div>
+            </div>
+            
+            <nav class="hidden md:flex space-x-8 font-medium text-stone-600">
+                <a href="#home" class="hover:text-emerald-700 transition">Home</a>
+                <a href="#rates" class="hover:text-emerald-700 transition">Today's Rates</a>
+                <a href="#shop" class="hover:text-emerald-700 transition">Shop Fresh</a>
+                <a href="#about" class="hover:text-emerald-700 transition">Our Mission</a>
+            </nav>
+
+            <div class="flex items-center space-x-4">
+                <button onclick="toggleCart()" class="relative bg-emerald-50 text-emerald-800 px-4 py-2.5 rounded-xl font-semibold border border-emerald-200 hover:bg-emerald-100 transition flex items-center space-x-2">
+                    <i class="fa-solid fa-basket-shopping text-emerald-600"></i>
+                    <span class="hidden sm:inline">Cart</span>
+                    <span id="cart-count" class="bg-emerald-600 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative bg-gradient-to-b from-emerald-900 to-emerald-950 text-white py-20 px-4">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6">
+                <span class="bg-amber-500/20 text-amber-300 text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-full border border-amber-500/30">
+                    Empowering Nepali Farmers
+                </span>
+                <h1 class="text-4xl sm:text-6xl font-black tracking-tight leading-tight">
+                    Fresh from <span class="text-emerald-400">Nepali Farms</span>, Not Local Syndicates.
+                </h1>
+                <p class="text-stone-300 text-lg leading-relaxed">
+                    Say goodbye to expensive inorganic vegetables, fruits, and inflated prices dictated by city middlemen. eKishan connects you directly with local farmers across Nepal for fresh, organic, seasonal produce at fair, transparent rates.
+                </p>
+                <div class="flex flex-wrap gap-4 pt-4">
+                    <a href="#shop" class="bg-emerald-500 hover:bg-emerald-600 text-stone-950 font-bold px-8 py-4 rounded-xl shadow-lg transition flex items-center space-x-2">
+                        <span>Order Fresh Produce</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                    <a href="#rates" class="bg-white/10 hover:bg-white/20 text-white border border-white/20 font-bold px-8 py-4 rounded-xl backdrop-blur-sm transition">
+                        View Today's Rates
+                    </a>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+                <div class="space-y-4">
+                    <div class="bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/10">
+                        <i class="fa-solid fa-carrot text-3xl text-amber-400 mb-3"></i>
+                        <h3 class="font-bold text-lg">100% Organic</h3>
+                        <p class="text-xs text-stone-300 mt-1">Grown naturally by verified local farming families.</p>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/10">
+                        <i class="fa-solid fa-scale-balanced text-3xl text-emerald-400 mb-3"></i>
+                        <h3 class="font-bold text-lg">Fair Rates</h3>
+                        <p class="text-xs text-stone-300 mt-1">No monopoly inflation. Honest prices for consumers and farmers.</p>
+                    </div>
+                </div>
+                <div class="space-y-4 pt-8">
+                    <div class="bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/10">
+                        <i class="fa-solid fa-truck-fast text-3xl text-emerald-300 mb-3"></i>
+                        <h3 class="prev font-bold text-lg">Farm to Door</h3>
+                        <p class="text-xs text-stone-300 mt-1">Harvested and delivered fresh within 24 hours.</p>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/10">
+                        <i class="fa-solid fa-jar text-3xl text-amber-300 mb-3"></i>
+                        <h3 class="font-bold text-lg">Authentic Goods</h3>
+                        <p class="text-xs text-stone-300 mt-1">Pure honey, local cheese, and traditional agricultural items.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Today's Vegetable Rates Comparison Widget -->
+    <section id="rates" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+            <span class="text-emerald-600 font-bold uppercase tracking-wider text-sm">Transparency First</span>
+            <h2 class="text-3xl font-black text-stone-900 mt-2">Today's Vegetable & Fruit Rates in Nepal</h2>
+            <p class="text-stone-600 mt-2">Compare local monopoly market prices with transparent eKishan farmer-assigned pricing.</p>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-sm border border-stone-200 overflow-hidden">
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="bg-stone-100 text-stone-700 uppercase text-xs tracking-wider border-b border-stone-200">
+                            <th class="py-4 px-6">Products</th>
+                            <th class="py-4 px-6">Category</th>
+                            <th class="py-4 px-6">Local Market Price (Monopoly)</th>
+                            <th class="py-4 px-6 text-emerald-700 font-bold">eKishan Direct Price</th>
+                            <th class="py-4 px-6">You Save</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-stone-100 text-sm">
+                        <tr class="hover:bg-stone-50">
+                            <td class="py-4 px-6 font-bold flex items-center space-x-3">
+                                <span class="w-2 h-2 rounded-full bg-red-500"></span>
+                                <span>Organic Tomato (Big)</span>
+                            </td>
+                            <td class="py-4 px-6 text-stone-500">Vegetable</td>
+                            <td class="py-4 px-6 text-stone-400 line-through">Rs. 110 /kg</td>
+                            <td class="py-4 px-6 font-bold text-emerald-700">Rs. 80 /kg</td>
+                            <td class="py-4 px-6 text-emerald-600 font-semibold">Rs. 30 (27%)</td>
+                        </tr>
+                        <tr class="hover:bg-stone-50">
+                            <td class="py-4 px-6 font-bold flex items-center space-x-3">
+                                <span class="w-2 h-2 rounded-full bg-red-500"></span>
+                                <span>Fresh Cauliflower (Local)</span>
+                            </td>
+                            <td class="py-4 px-6 text-stone-500">Vegetable</td>
+                            <td class="py-4 px-6 text-stone-400 line-through">Rs. 95 /kg</td>
+                            <td class="py-4 px-6 font-bold text-emerald-700">Rs. 65 /kg</td>
+                            <td class="py-4 px-6 text-emerald-600 font-semibold">Rs. 30 (31%)</td>
+                        </tr>
+                        <tr class="hover:bg-stone-50">
+                            <td class="py-4 px-6 font-bold flex items-center space-x-3">
+                                <span class="w-2 h-2 rounded-full bg-amber-500"></span>
+                                <span>Nepali Honey (Pure Wild)</span>
+                            </td>
+                            <td class="py-4 px-6 text-stone-500">Agricultural Goods</td>
+                            <td class="py-4 px-6 text-stone-400 line-through">Rs. 1,200 /ltr</td>
+                            <td class="py-4 px-6 font-bold text-emerald-700">Rs. 850 /ltr</td>
+                            <td class="py-4 px-6 text-emerald-600 font-semibold">Rs. 350 (29%)</td>
+                        </tr>
+                        <tr class="hover:bg-stone-50">
+                            <td class="py-4 px-6 font-bold flex items-center space-x-3">
+                                <span class="w-2 h-2 rounded-full bg-amber-500"></span>
+                                <span>Hilly Organic Yak/Cow Cheese</span>
+                            </td>
+                            <td class="py-4 px-6 text-stone-500">Dairy Product</td>
+                            <td class="py-4 px-6 text-stone-400 line-through">Rs. 1,400 /kg</td>
+                            <td class="py-4 px-6 font-bold text-emerald-700">Rs. 1,050 /kg</td>
+                            <td class="py-4 px-6 text-emerald-600 font-semibold">Rs. 350 (25%)</td>
+                        </tr>
+                        <tr class="hover:bg-stone-50">
+                            <td class="py-4 px-6 font-bold flex items-center space-x-3">
+                                <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                                <span>Fresh Apple (Mustang)</span>
+                            </td>
+                            <td class="py-4 px-6 text-stone-500">Fruit</td>
+                            <td class="py-4 px-6 text-stone-400 line-through">Rs. 280 /kg</td>
+                            <td class="py-4 px-6 font-bold text-emerald-700">Rs. 200 /kg</td>
+                            <td class="py-4 px-6 text-emerald-600 font-semibold">Rs. 80 (28%)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shop Section -->
+    <section id="shop" class="py-16 bg-stone-100/70 border-t border-stone-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div>
+                    <span class="text-emerald-600 font-bold uppercase tracking-wider text-sm">Direct Marketplace</span>
+                    <h2 class="text-3xl font-black text-stone-900 mt-2">Order Fresh Agro-Products Online</h2>
+                </div>
+                <p class="text-stone-500 text-sm mt-2 md:mt-0">Prices assigned directly by partner farmers in Dhading, Kavre, Mustang, & Illam.</p>
+            </div>
+
+            <!-- Product Cards Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <!-- Product 1 -->
+                <div class="bg-white rounded-2xl shadow-sm border border-stone-200 overflow-hidden flex flex-col justify-between hover:shadow-md transition">
+                    <div>
+                        <div class="h-48 bg-stone-200 relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1582284540020-8acbe03f4924?auto=format&fit=crop&q=80&w=600" alt="Tomato" class="w-full h-full object-cover">
+                            <span class="absolute top-3 left-3 bg-emerald-600 text-white text-[10px] font-bold uppercase px-2.5 py-1 rounded-md">Organic</span>
+                        </div>
+                        <div class="p-5">
+                            <span class="text-xs text-stone-400 font-medium">Farmer: Ramesh Tamang (Dhading)</span>
+                            <h3 class="font-bold text-lg text-stone-900 mt-1">Fresh Organic Tomatoes</h3>
+                            <div class="mt-3 flex items-baseline space-x-2">
+                                <span class="text-xl font-black text-emerald-700">Rs. 80</span>
+                                <span class="text-sm text-stone-400">/ kg</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-5 pt-0">
+                        <button onclick="addToCart('Fresh Organic Tomatoes', 80, 'kg')" class="w-full bg-emerald-700 hover:bg-emerald-800 text-white font-semibold py-2.5 rounded-xl transition flex items-center justify-center space-x-2">
+                            <i class="fa-solid fa-plus"></i>
+                            <span>Add to Basket</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="bg-white rounded-2xl shadow-sm border border-stone-200 overflow-hidden flex flex-col justify-between hover:shadow-md transition">
+                    <div>
+                        <div class="h-48 bg-stone-200 relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1568584711270-dcae6f3af3ef?auto=format&fit=crop&q=80&w=600" alt="Honey" class="w-full h-full object-cover">
+                            <span class="absolute top-3 left-3 bg-amber-600 text-white text-[10px] font-bold uppercase px-2.5 py-1 rounded-md">Pure & Natural</span>
+                        </div>
+                        <div class="p-5">
+                            <span class="text-xs text-stone-400 font-medium">Farmer: Dev Kumar (Illam)</span>
+                            <h3 class="font-bold text-lg text-stone-900 mt-1">Wild Himalayan Honey</h3>
+                            <div class="mt-3 flex items-baseline space-x-2">
+                                <span class="text-xl font-black text-emerald-700">Rs. 850</span>
+                                <span class="text-sm text-stone-400">/ ltr</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-5 pt-0">
+                        <button onclick="addToCart('Wild Himalayan Honey', 850, 'ltr')" class="w-full bg-emerald-700 hover:bg-emerald-800 text-white font-semibold py-2.5 rounded-xl transition flex items-center justify-center space-x-2">
+                            <i class="fa-solid fa-plus"></i>
+                            <span>Add to Basket</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="bg-white rounded-2xl shadow-sm border border-stone-200 overflow-hidden flex flex-col justify-between hover:shadow-md transition">
+                    <div>
+                        <div class="h-48 bg-stone-200 relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?auto=format&fit=crop&q=80&w=600" alt="Cheese" class="w-full h-full object-cover">
+                            <span class="absolute top-3 left-3 bg-amber-600 text-white text-[10px] font-bold uppercase px-2.5 py-1 rounded-md">Artisan Dairy</span>
+                        </div>
+                        <div class="p-5">
+                            <span class="text-xs text-stone-400 font-medium">Farmer: Pasang Sherpa (Rasuwa)</span>
+                            <h3 class="font-bold text-lg text-stone-900 mt-1">Hilly Organic Chhurpi/Cheese</h3>
+                            <div class="mt-3 flex items-baseline space-x-2">
+                                <span class="text-xl font-black text-emerald-700">Rs. 1,050</span>
+                                <span class="text-sm text-stone-400">/ kg</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-5 pt-0">
+                        <button onclick="addToCart('Hilly Organic Cheese', 1050, 'kg')" class="w-full bg-emerald-700 hover:bg-emerald-800 text-white font-semibold py-2.5 rounded-xl transition flex items-center justify-center space-x-2">
+                            <i class="fa-solid fa-plus"></i>
+                            <span>Add to Basket</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="bg-white rounded-2xl shadow-sm border border-stone-200 overflow-hidden flex flex-col justify-between hover:shadow-md transition">
+                    <div>
+                        <div class="h-48 bg-stone-200 relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?auto=format&fit=crop&q=80&w=600" alt="Apple" class="w-full h-full object-cover">
+                            <span class="absolute top-3 left-3 bg-emerald-600 text-white text-[10px] font-bold uppercase px-2.5 py-1 rounded-md">Seasonal</span>
+                        </div>
+                        <div class="p-5">
+                            <span class="text-xs text-stone-400 font-medium">Farmer: Karma Gurung (Mustang)</span>
+                            <h3 class="font-bold text-lg text-stone-900 mt-1">Mustang Crisp Apples</h3>
+                            <div class="mt-3 flex items-baseline space-x-2">
+                                <span class="text-xl font-black text-emerald-700">Rs. 200</span>
+                                <span class="text-sm text-stone-400">/ kg</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-5 pt-0">
+                        <button onclick="addToCart('Mustang Crisp Apples', 200, 'kg')" class="w-full bg-emerald-700 hover:bg-emerald-800 text-white font-semibold py-2.5 rounded-xl transition flex items-center justify-center space-x-2">
+                            <i class="fa-solid fa-plus"></i>
+                            <span>Add to Basket</span>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- About Mission Section -->
+    <section id="about" class="py-20 bg-white border-t border-stone-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <span class="text-amber-600 font-bold uppercase tracking-wider text-sm">About eKishan Initiative</span>
+                    <h2 class="text-3xl sm:text-4xl font-black text-stone-900 leading-tight">
+                        Breaking Market Monopolies & Delivering Real Value to Citizens
+                    </h2>
+                    <p class="text-stone-600 leading-relaxed">
+                        For generations, local agricultural markets in Nepal have been controlled by syndicates and middlemen who buy cheaply from hardworking farmers and sell stale, chemically-treated produce to urban citizens at exorbitant rates.
+                    </p>
+                    <p class="text-stone-600 leading-relaxed">
+                        <strong>eKishan</strong> changes this ecosystem. By utilizing direct supply logistics and digital tools, we ensure farmers receive the proper fair market value for their harvest while consumers get healthy, pesticide-free, fresh seasonal vegetables, fruits, honey, and cheese delivered straight home without markup extortion.
+                    </p>
+                    <div class="grid grid-cols-2 gap-6 pt-4">
+                        <div class="border-l-2 border-emerald-600 pl-4">
+                            <h4 class="font-black text-2xl text-emerald-900">5,000+</h4>
+                            <p class="text-xs text-stone-500 mt-1">Direct Farmer Partners</p>
+                        </div>
+                        <div class="border-l-2 border-amber-500 pl-4">
+                            <h4 class="font-black text-2xl text-amber-700">30% Cheaper</h4>
+                            <p class="text-xs text-stone-500 mt-1">Than local inorganic markets</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-emerald-900 rounded-3xl p-8 text-white relative overflow-hidden shadow-xl">
+                    <div class="relative z-10 space-y-6">
+                        <h3 class="text-2xl font-bold">Why Choose eKishan?</h3>
+                        <ul class="space-y-4 text-emerald-100 text-sm">
+                            <li class="flex items-start space-x-3">
+                                <i class="fa-solid fa-circle-check text-emerald-400 mt-1"></i>
+                                <span><strong>Direct Traceability:</strong> Know exactly which farmer and district your food came from.</span>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                                <i class="fa-solid fa-circle-check text-emerald-400 mt-1"></i>
+                                <span><strong>Fair Pricing:</strong> No artificial inflation. Fair profits for growers, honest grocery bills for families.</span>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                                <i class="fa-solid fa-circle-check text-emerald-400 mt-1"></i>
+                                <span><strong>Zero Chemical Monopoly:</strong> Strictly organic guidelines ensuring your family stays healthy.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Slide-over / Modal -->
+    <div id="cart-modal" class="fixed inset-0 z-50 overflow-hidden hidden">
+        <div class="absolute inset-0 bg-stone-900/50 backdrop-blur-sm transition-opacity" onclick="toggleCart()"></div>
+        <div class="absolute inset-y-0 right-0 max-w-full flex pl-10">
+            <div class="w-screen max-w-md bg-white shadow-2xl flex flex-col">
+                <div class="p-6 bg-emerald-900 text-white flex items-center justify-between">
+                    <h2 class="text-lg font-bold flex items-center space-x-2">
+                        <i class="fa-solid fa-basket-shopping"></i>
+                        <span>Your Organic Basket</span>
+                    </h2>
+                    <button onclick="toggleCart()" class="text-emerald-200 hover:text-white"><i class="fa-solid fa-xmark text-xl"></i></button>
+                </div>
+                <div class="flex-1 overflow-y-auto p-6 space-y-4" id="cart-items-container">
+                    <!-- Dynamic cart items will load here -->
+                    <p class="text-stone-400 text-center py-12">Your basket is currently empty.</p>
+                </div>
+                <div class="p-6 bg-stone-100 border-t border-stone-200 space-y-4">
+                    <div class="flex justify-between font-bold text-lg text-stone-900">
+                        <span>Total Amount:</span>
+                        <span id="cart-total">Rs. 0</span>
+                    </div>
+                    <button onclick="checkout()" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3.5 rounded-xl transition shadow-md">
+                        Proceed to Checkout Online
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-stone-900 text-stone-400 py-12 border-t border-stone-800 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center space-x-3">
+                <div class="bg-emerald-600 text-white p-2 rounded-lg">
+                    <i class="fa-solid fa-seedling"></i>
+                </div>
+                <span class="text-xl font-black text-white">e<span class="text-amber-500">Kishan</span> Nepal</span>
+            </div>
+            <p>&copy; 2026 eKishan Initiative. Connecting Nepali Farms to Families. All rights reserved.</p>
+            <div class="flex space-x-4 text-stone-300">
+                <a href="#" class="hover:text-white transition"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" class="hover:text-white transition"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="hover:text-white transition"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script to handle dynamic cart interactions -->
+    <script>
+        let cart = [];
+
+        function toggleCart() {
+            const modal = document.getElementById('cart-modal');
+            modal.classList.toggle('hidden');
+        }
+
+        function addToCart(name, price, unit) {
+            const existingItem = cart.find(item => item.name === name);
+            if (existingItem) {
+                existingItem.qty += 1;
+            } else {
+                cart.push({ name, price, unit, qty: 1 });
+            }
+            updateCartUI();
+            
+            // Subtle feedback
+            alert(name + " added to your eKishan basket!");
+        }
+
+        function updateCartUI() {
+            const container = document.getElementById('cart-items-container');
+            const countBadge = document.getElementById('cart-count');
+            const totalElement = document.getElementById('cart-total');
+
+            let totalCount = cart.reduce((sum, item) => sum + item.qty, 0);
+            countBadge.innerText = totalCount;
+
+            if (cart.length === 0) {
+                container.innerHTML = `<p class="text-stone-400 text-center py-12">Your basket is currently empty.</p>`;
+                totalElement.innerText = "Rs. 0";
+                return;
+            }
+
+            let html = '';
+            let totalAmount = 0;
+
+            cart.forEach((item, index) => {
+                let itemTotal = item.price * item.qty;
+                totalAmount += itemTotal;
+                html += `
+                    <div class="flex items-center justify-between bg-white p-4 rounded-xl border border-stone-200 shadow-sm">
+                        <div>
+                            <h4 class="font-bold text-stone-900">${item.name}</h4>
+                            <p class="text-xs text-stone-500">Rs. ${item.price} per ${item.unit} × ${item.qty}</p>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <span class="font-bold text-emerald-700">Rs. ${itemTotal}</span>
+                            <button onclick="removeItem(${index})" class="text-red-400 hover:text-red-600 text-sm"><i class="fa-solid fa-trash"></i></button>
+                        </div>
+                    </div>
+                `;
+            });
+
+            container.innerHTML = html;
+            totalElement.innerText = "Rs. " + totalAmount;
+        }
+
+        function removeItem(index) {
+            cart.splice(index, 1);
+            updateCartUI();
+        }
+
+        function checkout() {
+            if (cart.length === 0) {
+                alert("Your basket is empty!");
+                return;
+            }
+            alert("Thank you for supporting Nepali farmers via eKishan! Your direct online order has been successfully placed. Our delivery representative will contact you shortly.");
+            cart = [];
+            updateCartUI();
+            toggleCart();
+        }
+    </script>
+</body>
+</html>
